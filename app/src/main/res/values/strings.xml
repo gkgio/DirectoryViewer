@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DirectoryViewer</string>
+    <string name="tv_content_directory">Contents of the directory</string>
+    <string name="directory_filter">directory: %1$S</string>
+    <string name="file_filter">\n     file: %1$S</string>
+    <string name="tv_directory_is_empty">Directory is empty</string>
+</resources>
