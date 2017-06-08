@@ -45,7 +45,7 @@ public class FilesAdapter extends RecyclerView.Adapter<FilesAdapter.CategoryItem
                 @Override
                 public void onClick(View v) {
                     Gson gson = new Gson();
-                    String jsonFile = gson.toJson(file, File.class);
+                    final String jsonFile = gson.toJson(file, File.class);
                     Intent intent = new Intent(context, DirectoryInfo.class);
                     intent.putExtra("File", jsonFile);
                     context.startActivity(intent);
