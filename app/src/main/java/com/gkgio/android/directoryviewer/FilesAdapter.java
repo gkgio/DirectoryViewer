@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.google.gson.Gson;
-
 import java.io.File;
 
 /**
@@ -18,6 +16,8 @@ import java.io.File;
  */
 
 public class FilesAdapter extends RecyclerView.Adapter<FilesAdapter.CategoryItemViewHolder> {
+
+    private final String INTENT_FILE_PARAM = "File";
 
     private final File[] files;
     private Context context;
@@ -44,10 +44,8 @@ public class FilesAdapter extends RecyclerView.Adapter<FilesAdapter.CategoryItem
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Gson gson = new Gson();
-                    final String jsonFile = gson.toJson(file, File.class);
-                    Intent intent = new Intent(context, DirectoryInfo.class);
-                    intent.putExtra("File", jsonFile);
+                    Intent intent = new Intent(context, DirectoryInfoActivity.class);
+                    intent.putExtra(INTENT_FILE_PARAM, file);
                     context.startActivity(intent);
                 }
             });
